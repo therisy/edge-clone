@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { FaInstagram } from "react-icons/fa";
-
 export default function Card({ name }) {
     return (
         <div className="cursor-pointer flex-col flex items-center">

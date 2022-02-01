@@ -56,7 +56,8 @@ export default function Home() {
   const messageSearch = () => {
     router.push(`/search?q=${value}`)
   }
-  
+
+
   return (
     <div>
       <Header></Header>
@@ -68,7 +69,7 @@ export default function Home() {
         </div>
 
         <div className="w-1/2 flex items-center">
-          <input value={value} onChange={e => { setValue(e.currentTarget.value); }}  className="rounded-l-2xl	 w-full p-3 px-5 bg-gri" placeholder="İnternette ara"></input>
+          <input value={value} onChange={e => setValue(e.currentTarget.value)} className="rounded-l-2xl	w-full p-3 px-5 bg-gri" placeholder="İnternette ara"></input>
 
           <div className="bg-blue h-12 p-3 px-7 rounded-r-2xl">
             <button onClick={messageSearch}><FaSearch className="text-2xl" /></button>
