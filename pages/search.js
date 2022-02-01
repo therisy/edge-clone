@@ -14,14 +14,16 @@ export default function Search() {
     const { q } = router.query
 
     const messageSearch = async () => {
+        let txt = !value ? (q != "undefined" ? (!q ? "github" : q) : "github") : value;
+
         fetch(
-            `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${CONTEXT_KEY}&q=${!value ? q : value}`
+            `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${CONTEXT_KEY}&q=${txt}`
         )
             .then((res) => res.json())
             .then((result) => {
                 setData(result);
             });
-        router.push(`/search?q=${value || q}`)
+        router.push(`/search?q=${txt}`)
     }
 
     useEffect(() => {

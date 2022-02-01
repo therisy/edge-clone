@@ -54,6 +54,7 @@ export default function Home() {
   ]
 
   const messageSearch = () => {
+    if(!value) return alert("Bir şey yazmalısın!")
     router.push(`/search?q=${value}`)
   }
 
